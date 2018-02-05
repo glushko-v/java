@@ -1,5 +1,3 @@
-package lesson_array;
-
 import java.util.Arrays;
 
 public class BanksPractice {
@@ -57,15 +55,21 @@ public class BanksPractice {
 
     static void depositMoney(String[] clients, int[]balances, String client, int money) {
 
+        balances[findClientIndexByName(clients, client)] += calculateDepositAmountAfterCommission(money);
+    }
+
+    static int findClientIndexByName(String[]clients, String client) {
         int clientIndex = 0;
 
         for (String cl: clients) {
             if(cl == client) break;
             clientIndex++;
         }
+        return clientIndex;
+    }
 
-        int moneyToDeposit = money <= 100 ? (int)(money - money*0.02) :(int)(money - money*0.01);
+    static int calculateDepositAmountAfterCommission(int money){
+        return money <= 100 ? (int)(money - money*0.02) :(int)(money - money*0.01);
 
-        balances[clientIndex] += moneyToDeposit;
     }
 }
