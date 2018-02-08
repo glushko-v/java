@@ -16,7 +16,9 @@ public class DemoHomeWork {
     static Order createOrderAndCallMethods(){
          Date current = new Date();
         Order order2 = new Order(100, current, true, current, "Kiev", "Ukraine", "SomeValue");
-
+        order2.checkPrice();
+        order2.confirmOrder();
+        order2.isValidType();
         return order2;
 
 
