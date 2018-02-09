@@ -1,0 +1,13 @@
+package lesson8.accounts;
+
+public class savingAccount extends Account {
+    int savingPerMonth;
+
+
+    public savingAccount(String bankName, String ownerName, int moneyAmount, int savingPerMonth) {
+        super(bankName, ownerName, moneyAmount);
+        this.savingPerMonth = savingPerMonth;
+    }
+
+
+}
